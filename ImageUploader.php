@@ -9,7 +9,7 @@ class ImageUploader
     public function upload(array $image): string
     {
         if (!empty($image['image'])) {
-            $root = app()->settings->getRootPath();
+            $root = \app()->settings->getRootPath();
             $path = $_SERVER['DOCUMENT_ROOT']. $root. '/public/img/';
             $name = $image['image']['name'];
 
