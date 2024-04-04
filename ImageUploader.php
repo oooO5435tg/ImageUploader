@@ -11,11 +11,16 @@ class ImageUploader
         if (!empty($image['image'])) {
             $root = \app()->settings->getRootPath();
             $path = $_SERVER['DOCUMENT_ROOT']. $root. '/public/img/';
-            $name = time() . '_' . substr(md5(rand()), 0, 5) . '.' . pathinfo($image['image']['name'], PATHINFO_EXTENSION);
+            $extension = pathinfo($image['image']['name'], PATHINFO_EXTENSION);
+            $randomName = uniqid() . '.' . $extension;
 
-            move_uploaded_file($image['image']['tmp_name'], $path. $name);
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
 
-            return $name;
+            move_uploaded_file($image['image']['tmp_name'], $path. $randomName);
+
+            return $randomName;
         }
 
         return '';
