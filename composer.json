@@ -1,0 +1,21 @@
+{
+    "name": "oooo5435tg/image-uploader",
+    "description": "package2",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "oooO5435tg",
+            "email": "morlean@inbox.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ImageUploader\\": "ImageUploader/"
+        }
+    }
+}
