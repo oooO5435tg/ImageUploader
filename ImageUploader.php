@@ -1,6 +1,8 @@
 <?php
 
-namespace Controller;
+namespace ImageUploader;
+
+use function Controller\app;
 
 class ImageUploader
 {

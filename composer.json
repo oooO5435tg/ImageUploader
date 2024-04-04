@@ -15,7 +15,10 @@
     },
     "autoload": {
         "psr-4": {
-            "ImageUploader\\": "ImageUploader/"
-        }
+            "ImageUploader\\": "/"
+        },
+        "files": [
+            "/ImageUploader.php"
+        ]
     }
 }
