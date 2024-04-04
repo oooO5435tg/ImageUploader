@@ -11,7 +11,7 @@ class ImageUploader
         if (!empty($image['image'])) {
             $root = \app()->settings->getRootPath();
             $path = $_SERVER['DOCUMENT_ROOT']. $root. '/public/img/';
-            $name = $image['image']['name'];
+            $name = time() . '_' . substr(md5(rand()), 0, 5) . '.' . pathinfo($image['image']['name'], PATHINFO_EXTENSION);
 
             move_uploaded_file($image['image']['tmp_name'], $path. $name);
 
